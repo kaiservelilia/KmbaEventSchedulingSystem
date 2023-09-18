@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <br>
+  <div class="card">
+    <div class="card-header">
+      <h1>Room List</h1>
+      <%= link_to 'New Room', new_venue_path, class: 'btn btn-primary' %>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <th>Room Name</th>
+            <th>Address</th>
+            <th>Action</th>
+          </thead>
+          <% @venues.each do |venue| %>
+            <tr>
+              <td><%= venue.name %></td>
+              <td><%= venue.address %></td>
+              <td>
+                <%= link_to 'Show', venue, class: 'btn btn-secondary' %>
+                <%= link_to 'Edit', edit_venue_path(venue), class: 'btn btn-primary' %>
+                <%= link_to 'Delete', venue, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger'%>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  <div>
+<div> 

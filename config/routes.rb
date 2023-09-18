@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'pages#landing'
-  get "/events", to: "events#index"
-  get "/events/new/:id", to: "events#new"
   resources :events
+  resources :users
+  resources :venues
 end

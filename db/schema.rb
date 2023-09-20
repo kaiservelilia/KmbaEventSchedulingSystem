@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_14_032235) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_19_070133) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.datetime "date"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "venue_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -42,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_032235) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "events", "venues"
   add_foreign_key "reservations", "events"
   add_foreign_key "reservations", "users"
 end

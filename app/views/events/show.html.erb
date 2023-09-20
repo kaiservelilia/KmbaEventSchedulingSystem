@@ -1,0 +1,44 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+	    <div class="card col-12 d-flex justify-content-center">
+	        <div class="card-header">
+	          <h1 class="card-title">Event Information</h1>
+	        </div>
+	        <div class="row">
+	          <div class="card-body">
+	            <p class="card-text">
+	              First Name :  <strong><%= @event.name %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Event Date :  <strong><%= @event.date %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Event Description :  <strong><%= @event.description %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Room Occupied :  <strong><%= @event.venue_id %></strong> 
+	            </p>
+	          </div>
+	        </div>
+	    </div>
+    <br>
+	    <%= link_to 'Update', edit_event_path(@event), class: 'btn btn-primary' %>
+		  <%= link_to "Back", events_path, class: "btn btn-secondary"%> 
+		 <br>
+		 <br>
+		  <%= button_to 'Delete', event_path(@event), method: :delete, class: 'btn btn-danger', onclick: "return confirm('Are you sure?');" %>
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+</div>

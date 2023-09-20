@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :events
   resources :users
   resources :venues
+  resources :reservations
 end

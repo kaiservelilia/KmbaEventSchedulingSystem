@@ -8,14 +8,14 @@
             <p>Add new Event.</p>
           <% elsif @action == "edit" %>
             <h1>Edit Event</h1>
-            <p>Update the product details.</p>
+            <p>Update the Event details.</p>
           <% end %>
         </div>
-        <%= form_with(model: @event) do |f| %>
+        <%= form_with(model: [@event], local: true) do |f| %>
           <div class="card-body">
             <div class="form-group">
               <div class="row">
-                <div class="col-md-4"> <!-- Adjust the column size as needed -->
+                <div class="col-md-4">
                   <label>Event Name</label>
                   <%= f.text_field :name %>
                 </div>
@@ -32,11 +32,17 @@
                   <%= f.text_area :description %>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <label>Room Available</label>
+                  <%= f.collection_select :venue_id, Venue.all, :id, :name, prompt: 'Select a Room' %>
+                </div>
+              </div>
             </div>
           </div>
           <div class="card-footer">
             <div class="d-flex justify-content-end">
-              <%= f.submit "SAVE", class: 'btn btn-primary' %>
+              <%= f.submit "Save", class: 'btn btn-primary' %>
               <%= link_to "Back", events_path, class: "btn btn-danger"%>  
             </div>
           </div>
@@ -45,4 +51,7 @@
     </div>
   </div>
 </div>
+
+
+
 

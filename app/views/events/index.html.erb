@@ -12,6 +12,7 @@
             <th>Name</th>
             <th>Date</th>
             <th>Description</th>
+            <th>Room Occupied</th>
             <th>Action</th>
           </thead>
           <% @events.each do |event| %>
@@ -19,10 +20,9 @@
               <td><%= event.name %></td>
               <td><%= event.date.strftime('%B %d, %Y %I:%M %p') %></td>
               <td><%= event.description %></td>
+              <td><%= event.venue_id %></td>
               <td>
-                <%= link_to 'Show', event, class: 'btn btn-secondary' %>
-                <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-primary' %>
-                <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger'%>
+                <%= link_to 'Show', event, class: 'btn btn-secondary' %>           
               </td>
             </tr>
           <% end %>

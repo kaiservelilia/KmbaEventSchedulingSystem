@@ -4,6 +4,7 @@ class VenuesController < ApplicationController
 	end
 
 	def show
+		@venue = Venue.find(params[:id])
 	end
 
 	def new
@@ -23,10 +24,11 @@ class VenuesController < ApplicationController
 
 	def edit
 		@venue = Venue.find(params[:id])
-		@action = "new"
+		@action = "edit"
 	end
 
 	def update
+		@venue = Venue.find(params[:id])
 		if @venue.update(event_params)
 			redirect_to @venue, notice: 'Room was successfully updated.'
 		else
@@ -35,15 +37,12 @@ class VenuesController < ApplicationController
 	end
 
 	def destroy
+		@venue = Venue.find(params[:id])
 		@venue.destroy
 		redirect_to venues_url, notice: 'Room was successfully destroyed.'
 	end
 
 	private
-	
-	def set_venue
-		@venue = Venue.find(params[:id])
-	end
 
 	def venue_params
 		params.require(:venue).permit(:name, :address)

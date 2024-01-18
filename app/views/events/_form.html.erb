@@ -36,7 +36,7 @@
               <div class="row">
                 <div class="col-md-4">
                   <label>Room Available</label>
-                    <%= f.collection_select :venue_id, Venue.all, :id, :name, prompt: ' -- Select Room --', style: 'width: 100%; padding: 8px;', class: 'form-control' %>
+                    <%= f.collection_select :venue_id, Venue.all,:id, :name, {}, { class: "form form-group form-control" } %>
                 </div>
               </div>
               <div class="row">
@@ -64,11 +64,9 @@
                 </div>
               </div>
               <div class="row">
-                <div class="dropdown">
-                  <div class="col-md-4">
-                    <label>Payment Type</label>
-                    <%= f.select :payment_type, options_for_select(Event::PAYMENT_TYPE), prompt: ' -- Select Payment --', class: 'form-control' %>
-                  </div>
+                <div class="col-md-4">
+                  <label>Payment Type</label>
+                  <%= f.select :payment_type, options_for_select(Event::PAYMENT_TYPE), {}, { class: "form form-group form-control" } %>
                 </div>
               </div>
 

@@ -16,7 +16,7 @@
 	          </div>
 	          <div class="card-body">
 	            <p class="card-text">
-	              Event Date :  <strong><%= @event.date %></strong> 
+	              Event Date :  <strong><%= @event.date.strftime('%B %d, %Y') %></strong> 
 	            </p>
 	          </div>
 	          <div class="card-body">
@@ -31,12 +31,12 @@
 	          </div>
 	          <div class="card-body">
 	            <p class="card-text">
-	              Tiime IN :  <strong><%= @event.time_in %></strong> 
+	              Time IN :  <strong><%= format_time(@event.time_in) %></strong> 
 	            </p>
 	          </div>
 	          <div class="card-body">
 	            <p class="card-text">
-	              Time OUT :  <strong><%= @event.time_out %></strong> 
+	              Time OUT :  <strong><%= format_time(@event.time_out) %></strong> 
 	            </p>
 	          </div>
 	          <div class="card-body">

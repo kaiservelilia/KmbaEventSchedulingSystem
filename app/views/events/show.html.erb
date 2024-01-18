@@ -11,7 +11,7 @@
 	        <div class="row">
 	          <div class="card-body">
 	            <p class="card-text">
-	              First Name :  <strong><%= @event.name %></strong> 
+	              Event Name :  <strong><%= @event.name %></strong> 
 	            </p>
 	          </div>
 	          <div class="card-body">
@@ -26,7 +26,47 @@
 	          </div>
 	          <div class="card-body">
 	            <p class="card-text">
-	              Room Occupied :  <strong><%= @event.venue_id %></strong> 
+	              Room Occupied :  <strong><%= @event.venue_name %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Tiime IN :  <strong><%= @event.time_in %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Time OUT :  <strong><%= @event.time_out %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Number of Attendies :  <strong><%= @event.no_of_attendies %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Set Up Type :  <strong><%= @event.set_up_type %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Payment Type :  <strong><%= @event.payment_type %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Email :  <strong><%= @event.email %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Contact Number :  <strong><%= @event.contact_number %></strong> 
+	            </p>
+	          </div>
+	          <div class="card-body">
+	            <p class="card-text">
+	              Contact Person :  <strong><%= @event.contact_person %></strong> 
 	            </p>
 	          </div>
 	        </div>

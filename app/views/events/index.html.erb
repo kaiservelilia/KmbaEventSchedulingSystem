@@ -9,7 +9,7 @@
       <div class="table-responsive">
         <table class="table">
           <thead>
-            <th>Name</th>
+            <th>Event Name</th>
             <th>Date</th>
             <th>Description</th>
             <th>Room Occupied</th>
@@ -20,7 +20,7 @@
               <td><%= event.name %></td>
               <td><%= event.date.strftime('%B %d, %Y %I:%M %p') %></td>
               <td><%= event.description %></td>
-              <td><%= event.venue_id %></td>
+              <td><%= event.venue_name %></td>
               <td>
                 <%= link_to 'Show', event, class: 'btn btn-secondary' %>           
               </td>

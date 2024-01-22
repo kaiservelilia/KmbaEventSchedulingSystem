@@ -1,33 +1,52 @@
-<div class="container-fluid">
-  <br>
-  <div class="card">
-    <div class="card-header">
-      <h1>Event List</h1>
-      <%= link_to 'New Event', new_event_path, class: 'btn btn-primary' %>
-    </div>
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <th>Event Name</th>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Room Occupied</th>
-            <th>Action</th>
-          </thead>
-          <% @events.each do |event| %>
-            <tr>
-              <td><%= event.name %></td>
-              <td><%= event.date.strftime('%B %d, %Y') %></td>
-              <td><%= event.description %></td>
-              <td><%= event.venue_name %></td>
-              <td>
-                <%= link_to 'Show', event, class: 'btn btn-secondary' %>           
-              </td>
-            </tr>
-          <% end %>
-        </table>
-      </div>
-    </div>
-  <div>
-<div> 
+
+  <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Events Informations</h3>
+
+                <div class="card-tools">
+                  <%# <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div> %>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>Event Name</th>
+                      <th>Date</th>
+                      <th>Description</th>
+                      <th>Room Occupied</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <% @events.each do |event| %>
+                    <tr>
+                      <td><%= event.name %></td>
+                      <td><%= event.date.strftime('%B %d, %Y') %></td>
+                      <td><%= event.description %></td>
+                      <td><%= event.venue_name %></td>
+                      <td>
+                        <%= link_to 'Show', event, class: 'btn btn-secondary' %>           
+                      </td>
+                    </tr>
+                  <% end %>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->

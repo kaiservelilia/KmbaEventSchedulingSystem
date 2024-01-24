@@ -1,0 +1,45 @@
+.card
+  .card-header
+    %h3.card-title Event Information
+    .card-tools
+  .card-body
+    Event Name :
+    %strong= @event.name
+  .card-body
+    Event Date :
+    %strong= @event.date.strftime('%B %d, %Y')
+  .card-body
+    Event Description :
+    %strong= @event.description
+  .card-body
+    Room Occupied :
+    %strong= @event.venue_name
+  .card-body
+    Time IN :
+    %strong= format_time(@event.time_in)
+  .card-body
+    Time OUT :
+    %strong= format_time(@event.time_out)
+  .card-body
+    Number of Attendies :
+    %strong= @event.no_of_attendies
+  .card-body
+    Set Up Type :
+    %strong= @event.set_up_type
+  .card-body
+    Payment Type :
+    %strong= @event.payment_type
+  .card-body
+    Email :
+    %strong= @event.email
+  .card-body
+    Contact Number :
+    %strong= @event.contact_number
+  .card-body
+    Contact Person :
+    %strong= @event.contact_person
+  .card-footer
+    .d-flex.justify-content
+      = link_to 'EDIT', edit_event_path(@event), class: 'btn btn-primary ml-2'
+      = link_to "BACK", events_path, class: "btn btn-secondary ml-2"
+      = button_to 'DELETE', event_path(@event), method: :delete, class: 'btn btn-danger ml-2', onclick: 'return confirm("Are you sure you want to delete this item?");'

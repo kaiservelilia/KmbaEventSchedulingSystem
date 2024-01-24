@@ -1,0 +1,68 @@
+.wrapper
+  .row
+    .card
+      .card-header
+        - if @action == "new"
+          %h1 New Event
+          %p Fill out reservation form.
+        - elsif @action == "edit"
+          %h1 Edit Event
+          %p Update the Event details.
+      = form_with(model: [@event], local: true) do |f|
+        .card-body
+          .form-group
+            .col-md-4
+              %label Event Name
+              = f.text_field :name, class: 'form-control'
+          .form-group
+            .col-md-4
+              %label Event Date
+              = f.date_field :date, class: 'form-control'
+          .form-group
+            .col-md-4
+              %label Event Description
+              = f.text_area :description, class: 'form-control'
+          .form-group
+            .col-md-4
+              %label Room Available
+              = f.collection_select :venue_id, Venue.all,:id, :name, {}, { class: "form-control custom-select" }
+          .form-group
+            .col-md-4
+              %label Time IN
+              = f.time_field :time_in, class: 'form-control'
+          .form-group
+            .col-md-4
+              %label Time OUT
+              = f.time_field :time_out, class: 'form-control'
+          .form-group
+            .col-md-4
+              %label Number of Attendies
+              = f.text_area :no_of_attendies, class: 'form-control'
+          .form-group
+            .col-md-4
+              %label Set Up Type
+              = f.text_area :set_up_type, class: 'form-control'
+          .form-group
+            .col-md-4
+              %label Payment Type
+              = f.select :payment_type, options_for_select(Event::PAYMENT_TYPE), {}, { class: "form-control custom-select" }
+          .form-group
+            .col-md-4
+              %label Email Address
+              = f.text_area :email, class: 'form-control'
+          .form-group
+            .col-md-4
+              %label Contact Number
+              = f.text_area :contact_number, class: 'form-control'
+          .form-group
+            .col-md-4
+              %label Contact Person
+              = f.text_area :contact_person, class: 'form-control'
+          .form-group
+            .col-md-4
+              %label Contact Person
+              = f.text_area :contact_person, class: 'form-control'
+        .card-footer
+          .d-flex.justify-content
+            = f.submit "Save", class: 'btn btn-primary ml-2'
+            = link_to "Back", events_path, class: "btn btn-danger ml-2"

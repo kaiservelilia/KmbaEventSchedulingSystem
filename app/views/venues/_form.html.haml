@@ -1,0 +1,26 @@
+.container
+  .row
+    .col-12
+      .card
+        .card-header
+          - if @action == "new"
+            %h1 New Room
+            %p Add new Room.
+          - elsif @action == "edit"
+            %h1 Edit Room Details
+            %p Update the Room details.
+        = form_with(model: @venue) do |f|
+          .card-body
+            .form-group
+              .row
+                .col-md-4
+                  %label Room Name
+                  = f.text_field :name
+              .row
+                .col-md-4
+                  %label Room Description/Address
+                  = f.text_area :address
+          .card-footer
+            .d-flex.justify-content-end
+              = f.submit "Save", class: 'btn btn-primary'
+              = link_to "Back", venues_path, class: "btn btn-danger"

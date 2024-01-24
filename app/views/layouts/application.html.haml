@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title KmbaEventSchedulingSystem
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    %link{:href => "https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css", :rel => "stylesheet"}/
+    %script{:src => "https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"}
+    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+  %body.hold-transition.sidebar-mini.layout-fixed{"data-scrollbar-auto-hide" => "n"}
+    .wrapper
+      = render "base/header"
+      = render "base/sidebar"
+      .content-wrapper
+        .content-header
+          .container-fluid
+            .row.mb-2
+              .col-sm-6
+                %h1.m-0
+              / /.col
+        .content.container-fluid
+          .container-fluid
+            = yield
+    = render "base/footer"
+    = render "base/control_sidebar"

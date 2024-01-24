@@ -1,0 +1,19 @@
+.row
+  .col-12
+    .card
+      .card-header
+        %h1.card-title Rooms Informations
+      .card-header
+        = link_to 'New Room', new_venue_path, class: 'btn btn-primary'
+    .card-body.table-responsive.p-0
+      %table.table.table-hover.text-nowrap
+        %thead
+          %tr
+            %th Room Name
+            %th Address
+            %th Action
+        - @venues.each do |venue|
+          %tr
+            %td= venue.name
+            %td= venue.address
+            %td= link_to 'Show', venue, class: 'btn btn-secondary'

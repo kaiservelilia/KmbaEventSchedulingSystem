@@ -1,0 +1,31 @@
+.row
+  .col-12
+    .card
+      .card-header
+        %h1.card-title Events Informations
+      .card-header
+        = link_to 'New Event', new_event_path, class: 'btn btn-primary'
+    .card-body.table-responsive.p-0
+      %table.table.table-hover.text-nowrap
+        %thead
+          %tr
+            %th Event Name
+            %th Event Date
+            %th Room Occupied
+            %th Time IN
+            %th Time Out
+            %th No of Attendies
+            %th Contact Number
+            %th Contact Person
+            %th Action
+        - @events.each do |event|
+          %tr
+            %td= event.name
+            %td= event.date.strftime('%B %d, %Y')
+            %td= event.venue_name
+            %td= format_time(event.time_in)
+            %td= format_time(event.time_out)
+            %td= event.no_of_attendies
+            %td= event.contact_number
+            %td= event.contact_person
+            %td= link_to 'Show', event, class: 'btn btn-primary'

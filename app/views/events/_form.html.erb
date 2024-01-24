@@ -4,7 +4,7 @@
         <div class="card-header">
           <% if @action == "new" %>
             <h1>New Event</h1>
-            <p>Add new Event.</p>
+            <p>Fill out reservation form.</p>
           <% elsif @action == "edit" %>
             <h1>Edit Event</h1>
             <p>Update the Event details.</p>
@@ -88,8 +88,8 @@
 
           </div>
           <div class="card-footer">
-            <div class="d-flex justify-content-end">
-              <%= f.submit "Save", class: 'btn btn-primary' %>
+            <div class="d-flex justify-content">
+              <%= f.submit "Save", class: 'btn btn-primary'  %>
               <%= link_to "Back", events_path, class: "btn btn-danger"%>  
             </div>
           </div>

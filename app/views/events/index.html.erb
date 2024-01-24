@@ -14,9 +14,13 @@
           <thead>
             <tr>
               <th>Event Name</th>
-              <th>Date</th>
-              <th>Description</th>
+              <th>Event Date</th>
               <th>Room Occupied</th>
+              <th>Time IN</th>
+              <th>Time Out</th>
+              <th>No of Attendies</th>
+              <th>Contact Number</th>
+              <th>Contact Person</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -24,9 +28,13 @@
             <tr>
               <td><%= event.name %></td>
               <td><%= event.date.strftime('%B %d, %Y') %></td>
-              <td><%= event.description %></td>
               <td><%= event.venue_name %></td>
-              <td><%= link_to 'Show', event, class: 'btn btn-secondary' %></td>
+              <td><%= format_time(event.time_in) %></td>
+              <td><%= format_time(event.time_out) %></td>
+              <td><%= event.no_of_attendies %></td>
+              <td><%= event.contact_number %></td>
+              <td><%= event.contact_person %></td>
+              <td><%= link_to 'Show', event, class: 'btn btn-primary'%></td>
             </tr>
           <% end %>
         </table>
